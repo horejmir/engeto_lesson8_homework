@@ -13,6 +13,10 @@ public abstract class Person {
         this.surname = surname;
     }
 
+    public String getNameSurname() {
+        return name + " " + surname;
+    }
+
     public String getName() {
         return name;
     }

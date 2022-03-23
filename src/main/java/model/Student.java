@@ -13,6 +13,10 @@ public class Student extends Person {
         this.id = id;
     }
 
+    public String getFormattedId(){
+        return "ID"+String.format("%03d", id);
+    }
+
     public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
