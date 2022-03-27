@@ -23,20 +23,32 @@ public class Main {
         SchoolClass schoolClass1 = new SchoolClass("4.C", 4, teacher1, List.of(student1, student2, student3));
 
         //select implementatiton by user
+        Scanner input = new Scanner(System.in);
+        int implSelected = 1;
+        boolean continueInput = true;
+
         System.out.println("Implementation of SchoolService:");
         System.out.println("\t1: SchoolServiceBasic - short output to console");
         System.out.println("\t2: SchoolServiceFull - detailed output to console");
         System.out.println("\t3: SchoolServiceJSON - output to JSON file");
-        System.out.print("Choose implementation: ");
 
-        int implSelected = 1;
+        do {
+            try{
+                System.out.print("Choose implementation: ");
+                implSelected = input.nextInt();
 
-        try {
-            Scanner scanner = new Scanner(System.in);
-            implSelected = scanner.nextInt();
-        } catch (InputMismatchException e) {
-            System.err.println(e.getMessage());
+                if(implSelected > 0 && implSelected < 4)
+                    continueInput = false;
+                else
+                    System.out.println("\tTry again. (Incorrect selection: 1 - 3 is required)");
+            }
+            catch (InputMismatchException ex) {
+                System.out.println("\tTry again. (Incorrect input: an integer is required)");
+                input.nextLine();
+            }
         }
+        while (continueInput);
+
 
         //create instance of selected implementation
         SchoolService service;
@@ -48,7 +60,7 @@ public class Main {
         else
             service = new SchoolServiceBasic();
 
-        System.out.println("\t selected implementation: " + implSelected + " -> '" + service.getClass().getName() + "'\n");
+        System.out.println("\tSelected implementation: " + implSelected + " -> '" + service.getClass().getName() + "'\n");
 
 
         //import data and generate output
@@ -58,6 +70,5 @@ public class Main {
 
         service.addSchoolCLass(schoolClass1);
         service.generateOutput();
-
     }
 }

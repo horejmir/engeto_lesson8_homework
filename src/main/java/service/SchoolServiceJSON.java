@@ -41,12 +41,9 @@ public class SchoolServiceJSON extends SchoolServiceBasic implements SchoolServi
 
             this.classes.addAll(importedClasses);
 
-            System.out.println("Classes ("+ importedClasses.size() +") successfully imported from file: " + inputFileName);
+            System.out.println("School classes ("+ importedClasses.size() +") successfully imported from file: " + inputFileName);
 
-        } catch (IOException e){
-
-            System.err.println(e.getLocalizedMessage());
-        }
+        } catch (IOException e){ System.err.println(e.getLocalizedMessage()); }
     }
 
     @Override
@@ -58,7 +55,7 @@ public class SchoolServiceJSON extends SchoolServiceBasic implements SchoolServi
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(OUTPUT_FILE_NAME))) {
             writer.write(gson.toJson(this.classes));
-            System.out.println("List of classes ("+ this.classes.size() +") successfully saved to file: " + OUTPUT_FILE_NAME);
+            System.out.println("List of school classes ("+ this.classes.size() +") successfully saved to file: " + OUTPUT_FILE_NAME);
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }

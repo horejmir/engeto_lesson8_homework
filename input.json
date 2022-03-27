@@ -1,0 +1,25 @@
+[
+  {
+    "description": "1.B",
+    "grade": 1,
+    "teacher": {
+      "academicDegree": "Ing.",
+      "name": "Anna",
+      "surname": "Kohoutová"
+    },
+    "students": [
+      {
+        "dateOfBirth": "2014-01-23",
+        "id": 203,
+        "name": "Bára",
+        "surname": "Zajíčková"
+      },
+      {
+        "dateOfBirth": "2015-02-12",
+        "id": 204,
+        "name": "Aneta",
+        "surname": "Dvořáková"
+      }
+    ]
+  }
+]
