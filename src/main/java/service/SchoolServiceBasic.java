@@ -8,14 +8,10 @@ import java.util.List;
 
 public class SchoolServiceBasic implements SchoolService {
 
-    List<SchoolClass> classes = new ArrayList<>();
-
+    protected List<SchoolClass> classes = new ArrayList<>();
 
     @Override
-    public void addSchoolCLass(SchoolClass schoolClass) {
-        if(schoolClass == null)
-          throw new RuntimeException();
-
+    public final void addSchoolCLass(SchoolClass schoolClass) {
         classes.add(schoolClass);
     }
 
@@ -26,11 +22,9 @@ public class SchoolServiceBasic implements SchoolService {
             System.out.println(schoolClass.getDescription() + ", " + schoolClass.getTeacher().getNameSurname());
             for(Student student : schoolClass.getStudents()){
                 System.out.println(student.getFormattedId() + " " + student.getNameSurname());
-
             }
             System.out.println("------------------------");
         }
-
 
     }
 }
