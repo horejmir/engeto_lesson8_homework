@@ -22,7 +22,7 @@ public class Main {
         Student student3 = new Student("Jindřich", "Nový", LocalDate.of(2012, 2, 3), 345);
         SchoolClass schoolClass1 = new SchoolClass("4.C", 4, teacher1, List.of(student1, student2, student3));
 
-        //select implementatiton by user
+        //select implementation by user
         Scanner input = new Scanner(System.in);
         int implSelected = 1;
         boolean continueInput = true;
